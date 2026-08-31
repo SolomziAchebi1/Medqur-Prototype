@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/ward",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "DoseLock",
+      "hasCanvas": false,
+      "bodyTextLen": 1077,
+      "bodyTextHash": "2c5671ea28635053a25366731d4b574e7947848f7770b84d251022e6808760d0",
+      "bodyTextPrefix": "DoseLock Kingston General Teaching Hospital Medical 4B Thu, 27 A",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/ward-smoke.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "DoseLock",
+      "hasCanvas": false,
+      "bodyTextLen": 972,
+      "bodyTextHash": "6bf995c616840cb87a30070e11366d62ecd9d08c5828a7bb47b3f12645e0fde5",
+      "bodyTextPrefix": "DoseLock Thu, 27 Aug 2026, 06:38 am Nadine Clarke · Staff Nurse ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/ward-smoke-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/ward-smoke.json"
+}

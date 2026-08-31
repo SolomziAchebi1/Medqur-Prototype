@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/scan/p-devon/o-devon-morphine",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "DoseLock",
+      "hasCanvas": false,
+      "bodyTextLen": 766,
+      "bodyTextHash": "c07406cd5a213936553b1cc8ffb45a150b99c3bfd396b8025e5406d771d8ce17",
+      "bodyTextPrefix": "DoseLock Kingston General Teaching Hospital Medical 4B Thu, 27 A",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/scan-smoke.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "DoseLock",
+      "hasCanvas": false,
+      "bodyTextLen": 715,
+      "bodyTextHash": "b1e51d9baec38c9bfba8e2c5483fd65aa2c1f07ba410c50682ff8c98eff0b2f7",
+      "bodyTextPrefix": "DoseLock Thu, 27 Aug 2026, 06:38 am Nadine Clarke · Staff Nurse ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/scan-smoke-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/scan-smoke.json"
+}

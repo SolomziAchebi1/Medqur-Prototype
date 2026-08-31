@@ -1,0 +1,1 @@
+import{K as e,W as t,p as n}from"./store-D4Rfk4gs.js";import{a as r}from"./button-Bl1GFGpU.js";var i=e(t(),1),a=n(),o=i.forwardRef(({className:e,...t},n)=>(0,a.jsx)(`label`,{ref:n,className:r(`text-sm font-medium text-fg`,e),...t}));o.displayName=`Label`;export{o as t};
