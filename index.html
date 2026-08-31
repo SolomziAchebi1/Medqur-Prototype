@@ -8,44 +8,7 @@
 <title>Medqur · DoseLock</title>
 <style>
 :root{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Arial,sans-serif;color-scheme:light;--bg:#101714;--surface:#fffefa;--text:#101714;--muted:#68716c;--line:rgba(16,23,20,.10);--expected:#e2f4e5;--mismatch:#fff0ef;--danger:#c62828;--button:#101714;--buttonText:#fff}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:#f5f3eb;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-button{font:inherit}
-.page{min-height:100svh;display:flex;flex-direction:column}
-.header{width:100%;padding:clamp(22px,4vw,36px) clamp(20px,5vw,64px);display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
-.logo{width:42px;height:42px;object-fit:contain;border-radius:12px;display:block}
-.brand-name{font-size:17px;font-weight:650;letter-spacing:-.02em}
-.main{width:100%;flex:1;display:flex;align-items:center;justify-content:center;padding:clamp(30px,7vw,90px) clamp(20px,6vw,80px) clamp(55px,8vw,100px)}
-.content{width:min(1120px,100%);margin:0 auto}
-.eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#b9e6c4;margin-bottom:22px}
-h1{font-size:clamp(48px,7vw,88px);line-height:.96;letter-spacing:-.055em;font-weight:650;max-width:850px;margin:0}
-.intro{font-size:clamp(17px,2vw,20px);line-height:1.55;color:#cbd1cd;max-width:680px;margin:28px 0 0}
-.card{margin-top:clamp(44px,7vw,72px);background:var(--surface);color:var(--text);border-radius:28px;padding:clamp(24px,4vw,40px);box-shadow:0 20px 70px rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.08);animation:cardIn .7s cubic-bezier(.22,1,.36,1) both}
-.card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:28px}
-.section-label{font-size:12px;font-weight:750;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
-h2{font-size:clamp(24px,3vw,32px);line-height:1.1;letter-spacing:-.035em;margin:0;font-weight:650}
-.order{font-size:16px;line-height:1.5;color:var(--text);margin:12px 0 0}
-.comparison{width:min(600px,100%);margin:0 auto;display:flex;overflow:hidden;border-radius:9999px;min-height:116px;box-shadow:inset 0 0 0 1px var(--line);animation:rise .65s .08s cubic-bezier(.22,1,.36,1) both}
-.half{flex:1;min-width:0;padding:24px 28px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
-.expected{background:var(--expected)}
-.mismatch{background:var(--mismatch)}
-.divider{width:1px;background:rgba(16,23,20,.12);align-self:stretch}
-.med-label{font-size:11px;font-weight:750;text-transform:uppercase;letter-spacing:.12em;color:#69736d;margin-bottom:7px}
-.medication{font-size:clamp(18px,2.2vw,21px);line-height:1.25;font-weight:650;letter-spacing:-.015em;overflow-wrap:anywhere}
-.actions{display:flex;justify-content:center;margin-top:22px}
-.verify{border:0;border-radius:9999px;background:var(--button);color:var(--buttonText);padding:15px 25px;min-height:50px;font-size:16px;font-weight:650;cursor:pointer;box-shadow:0 5px 18px rgba(16,23,20,.16);transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s ease,opacity .2s ease}
-.verify:hover{transform:translateY(-2px);box-shadow:0 9px 24px rgba(16,23,20,.20)}
-.verify:active{transform:scale(.97)}
-.verify:focus-visible{outline:3px solid rgba(34,110,64,.35);outline-offset:4px}
-.status{min-height:24px;text-align:center;font-size:15px;font-weight:700;color:var(--danger);margin:16px 0 0;opacity:0;transform:translateY(6px);transition:opacity .35s ease,transform .35s cubic-bezier(.22,1,.36,1)}
-.status.show{opacity:1;transform:none}
-.footer{padding:24px clamp(20px,5vw,64px) 30px;color:#87908b;font-size:12px;text-align:center}
-@keyframes cardIn{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:none}}
-@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-@media(max-width:680px){.header{padding:20px}.logo{width:38px;height:38px}.main{padding:32px 18px 52px}.card{border-radius:24px;padding:22px 18px}.card-head{display:block}.comparison{min-height:110px}.half{padding:22px 16px}.actions{margin-top:18px}.verify{width:100%;max-width:360px}.footer{padding-bottom:24px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.comparison{animation:none}.verify,.status{transition:none}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:#f5f3eb;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}button{font:inherit}.page{min-height:100svh;display:flex;flex-direction:column}.header{width:100%;padding:clamp(22px,4vw,36px) clamp(20px,5vw,64px);display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}.logo-shell{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;overflow:hidden;background:transparent}.logo-shell canvas{width:42px;height:42px;display:block}.brand-name{font-size:17px;font-weight:650;letter-spacing:-.02em}.main{width:100%;flex:1;display:flex;align-items:center;justify-content:center;padding:clamp(30px,7vw,90px) clamp(20px,6vw,80px) clamp(55px,8vw,100px)}.content{width:min(1120px,100%);margin:0 auto}.eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#b9e6c4;margin-bottom:22px}h1{font-size:clamp(48px,7vw,88px);line-height:.96;letter-spacing:-.055em;font-weight:650;max-width:850px;margin:0}.intro{font-size:clamp(17px,2vw,20px);line-height:1.55;color:#cbd1cd;max-width:680px;margin:28px 0 0}.card{margin-top:clamp(44px,7vw,72px);background:var(--surface);color:var(--text);border-radius:28px;padding:clamp(24px,4vw,40px);box-shadow:0 20px 70px rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.08);animation:cardIn .7s cubic-bezier(.22,1,.36,1) both}.card-head{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:28px}.section-label{font-size:12px;font-weight:750;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}h2{font-size:clamp(24px,3vw,32px);line-height:1.1;letter-spacing:-.035em;margin:0;font-weight:650}.order{font-size:16px;line-height:1.5;color:var(--text);margin:12px 0 0}.med-reference{width:112px;height:82px;flex:0 0 112px;border-radius:16px;overflow:hidden;background:#eef0eb;box-shadow:0 5px 18px rgba(16,23,20,.10)}.med-reference img{width:100%;height:100%;display:block;object-fit:cover;object-position:center}.reference-note{font-size:10px;line-height:1.25;color:var(--muted);margin:6px 0 0;text-align:right}.comparison{width:min(600px,100%);margin:0 auto;display:flex;overflow:hidden;border-radius:9999px;min-height:116px;box-shadow:inset 0 0 0 1px var(--line);animation:rise .65s .08s cubic-bezier(.22,1,.36,1) both}.half{flex:1;min-width:0;padding:24px 28px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}.expected{background:var(--expected)}.mismatch{background:var(--mismatch)}.divider{width:1px;background:rgba(16,23,20,.12);align-self:stretch}.med-label{font-size:11px;font-weight:750;text-transform:uppercase;letter-spacing:.12em;color:#69736d;margin-bottom:7px}.medication{font-size:clamp(18px,2.2vw,21px);line-height:1.25;font-weight:650;letter-spacing:-.015em;overflow-wrap:anywhere}.actions{display:flex;justify-content:center;margin-top:22px}.verify{border:0;border-radius:9999px;background:var(--button);color:var(--buttonText);padding:15px 25px;min-height:50px;font-size:16px;font-weight:650;cursor:pointer;box-shadow:0 5px 18px rgba(16,23,20,.16);transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s ease,opacity .2s ease}.verify:hover{transform:translateY(-2px);box-shadow:0 9px 24px rgba(16,23,20,.20)}.verify:active{transform:scale(.97)}.verify:focus-visible{outline:3px solid rgba(34,110,64,.35);outline-offset:4px}.status{min-height:24px;text-align:center;font-size:15px;font-weight:700;color:var(--danger);margin:16px 0 0;opacity:0;transform:translateY(6px);transition:opacity .35s ease,transform .35s cubic-bezier(.22,1,.36,1)}.status.show{opacity:1;transform:none}.footer{padding:24px clamp(20px,5vw,64px) 30px;color:#87908b;font-size:12px;text-align:center}@keyframes cardIn{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:none}}@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}@media(max-width:680px){.header{padding:20px}.logo-shell{width:38px;height:38px}.logo-shell canvas{width:38px;height:38px}.main{padding:32px 18px 52px}.card{border-radius:24px;padding:22px 18px}.card-head{display:block}.med-reference{margin-top:18px;width:100%;height:120px}.reference-note{text-align:left}.comparison{min-height:110px}.half{padding:22px 16px}.actions{margin-top:18px}.verify{width:100%;max-width:360px}.footer{padding-bottom:24px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.comparison{animation:none}.verify,.status{transition:none}}
 @media(prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#101714;--surface:#f7f6f1;--text:#101714;--muted:#68716c}}
 </style>
 </head>
@@ -53,7 +16,7 @@ h2{font-size:clamp(24px,3vw,32px);line-height:1.1;letter-spacing:-.035em;margin:
 <div class="page">
 <header class="header">
 <a class="brand" href="#top" aria-label="Medqur DoseLock home">
-<img class="logo" src="HERBQURE%20-%20MEDVERIFY%20APP.png" alt="Medqur logo">
+<span class="logo-shell"><canvas id="logoCanvas" aria-label="Medqur logo"></canvas></span>
 <span class="brand-name">Medqur · DoseLock</span>
 </a>
 </header>
@@ -69,21 +32,19 @@ h2{font-size:clamp(24px,3vw,32px);line-height:1.1;letter-spacing:-.035em;margin:
 <h2 id="patient-title">Patient Devon · Expected order</h2>
 <p class="order">Morphine 4 mg IV</p>
 </div>
+<div>
+<div class="med-reference" aria-label="Reference photograph of pharmaceutical capsules">
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Drug_capsules.jpg" alt="Photograph of pharmaceutical capsules in blister packaging" loading="lazy" referrerpolicy="no-referrer">
+</div>
+<p class="reference-note">Reference image only</p>
+</div>
 </div>
 <div class="comparison" aria-label="Medication comparison">
-<div class="half expected">
-<div class="med-label">Expected</div>
-<div class="medication">Morphine 4 mg IV</div>
-</div>
+<div class="half expected"><div class="med-label">Expected</div><div class="medication">Morphine 4 mg IV</div></div>
 <div class="divider" aria-hidden="true"></div>
-<div class="half mismatch">
-<div class="med-label">Example mismatch</div>
-<div class="medication">Hydromorphone 4 mg</div>
+<div class="half mismatch"><div class="med-label">Example mismatch</div><div class="medication">Hydromorphone 4 mg</div></div>
 </div>
-</div>
-<div class="actions">
-<button class="verify" type="button" onclick="verifyDose()">Run verification</button>
-</div>
+<div class="actions"><button class="verify" type="button" onclick="verifyDose()">Run verification</button></div>
 <p class="status" id="status" role="status" aria-live="polite"></p>
 </section>
 </section>
@@ -91,7 +52,9 @@ h2{font-size:clamp(24px,3vw,32px);line-height:1.1;letter-spacing:-.035em;margin:
 <footer class="footer">Medqur · DoseLock prototype</footer>
 </div>
 <script>
+function removeLogoBackground(){const source=new Image();source.onload=()=>{const canvas=document.getElementById('logoCanvas'),ctx=canvas.getContext('2d',{willReadFrequently:true});const size=128;canvas.width=size;canvas.height=size;ctx.clearRect(0,0,size,size);const scale=Math.min(size/source.width,size/source.height);const w=source.width*scale,h=source.height*scale;ctx.drawImage(source,(size-w)/2,(size-h)/2,w,h);const image=ctx.getImageData(0,0,size,size);const p=image.data;for(let i=0;i<p.length;i+=4){const r=p[i],g=p[i+1],b=p[i+2];const nearWhite=r>242&&g>242&&b>242;if(nearWhite)p[i+3]=0;else if(r>225&&g>225&&b>225)p[i+3]=Math.max(0,Math.min(255,255-Math.round((r+g+b-675)*8)));}ctx.putImageData(image,0,0)};source.src='HERBQURE%20-%20MEDVERIFY%20APP.png'}
 function verifyDose(){const status=document.getElementById('status');status.textContent='HARD STOP — mismatch detected. Do not administer.';status.classList.add('show')}
+removeLogoBackground();
 </script>
 </body>
 </html>
