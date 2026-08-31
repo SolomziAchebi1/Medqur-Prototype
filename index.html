@@ -1,1 +1,97 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DoseLock — Medqur Prototype</title><style>:root{--bg:#101714;--text:#f5f3eb;--muted:#cbd1cd;--surface:#fffefa;--green:#e2f4e5;--red:#fff0ef;--dark:#101714;--danger:#d92d20}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}main{width:100%;max-width:1200px;margin:auto;padding:clamp(48px,8vw,80px) clamp(20px,5vw,40px)}.badge{color:#b9e6c4;font:700 12px monospace;letter-spacing:.18em;text-transform:uppercase}h1{font-size:clamp(42px,8vw,76px);line-height:.95;letter-spacing:-.045em;margin:20px 0;max-width:800px}p{font-size:clamp(16px,2.2vw,18px);line-height:1.6;color:var(--muted)}.intro{max-width:700px}.card{margin-top:36px;background:var(--surface);color:var(--dark);border-radius:20px;padding:clamp(24px,4vw,32px);animation:fadeUp .7s cubic-bezier(.22,1,.36,1) both}.card h2{font-size:clamp(22px,3vw,30px);letter-spacing:-.025em;margin:7px 0}.label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#69736d;margin-bottom:8px}.comparison{display:flex;width:100%;max-width:600px;min-height:112px;margin:28px auto 0;overflow:hidden;border-radius:9999px;box-shadow:inset 0 0 0 1px rgba(16,23,20,.09);animation:softIn .8s .08s cubic-bezier(.22,1,.36,1) both}.half{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:22px 28px;min-width:0;transition:filter .35s ease,transform .35s cubic-bezier(.22,1,.36,1)}.half:hover{filter:brightness(.985)}.expected{background:var(--green)}.mismatch{background:var(--red)}.half strong{font-size:clamp(18px,2.4vw,21px);line-height:1.25;letter-spacing:-.01em;color:#1d1d1f;overflow-wrap:anywhere}.divider{width:1px;background:rgba(16,23,20,.12);align-self:stretch}.action{display:block;margin:22px auto 0;padding:14px 22px;min-height:48px;border:0;border-radius:9999px;background:var(--dark);color:white;font:600 16px -apple-system,BlinkMacSystemFont,"SF Pro Text",sans-serif;cursor:pointer;transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,opacity .2s ease}.action:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(16,23,20,.16)}.action:active{transform:scale(.98)}.action:focus-visible{outline:3px solid #4b9cff;outline-offset:3px}#status{text-align:center;margin:14px 0 0;font-weight:700;color:var(--danger);min-height:24px;animation:statusIn .35s cubic-bezier(.22,1,.36,1)}@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}@keyframes softIn{from{opacity:0;transform:translateY(10px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes statusIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}@media(max-width:650px){main{padding-top:40px}.card{margin-top:30px}.comparison{flex-direction:column;max-width:420px;border-radius:28px}.half{padding:22px 18px}.divider{width:100%;height:1px;min-height:1px}.action{width:100%;margin-top:18px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.comparison,#status{animation:none}.half,.action{transition:none}.action:hover{transform:none;box-shadow:none}}@media(prefers-contrast:more){.comparison,.card{outline:1px solid currentColor}}</style></head><body><main><div class="badge">Medqur · DoseLock</div><h1>The last check before the dose.</h1><p class="intro">This GitHub Pages entry point confirms that the Medqur prototype is being served as a static site. The full application remains in the React/Vite source tree.</p><div class="card"><div class="label">Medication verification demo</div><h2>Patient Devon · Expected order</h2><p style="color:#101714">Morphine 4 mg IV</p><div class="comparison"><div class="half expected"><div class="label">Expected</div><strong>Morphine 4 mg IV</strong></div><div class="divider"></div><div class="half mismatch"><div class="label">Example mismatch</div><strong>Hydromorphone 4 mg</strong></div></div><button class="action" type="button" onclick="document.getElementById('status').textContent='HARD STOP — mismatch detected. Do not administer.'">Run verification</button><p id="status" aria-live="polite"></p></div></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101714">
+<meta name="description" content="Medqur DoseLock medication verification prototype">
+<title>Medqur · DoseLock</title>
+<style>
+:root{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Arial,sans-serif;color-scheme:light;--bg:#101714;--surface:#fffefa;--text:#101714;--muted:#68716c;--line:rgba(16,23,20,.10);--expected:#e2f4e5;--mismatch:#fff0ef;--danger:#c62828;--button:#101714;--buttonText:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:#f5f3eb;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+button{font:inherit}
+.page{min-height:100svh;display:flex;flex-direction:column}
+.header{width:100%;padding:clamp(22px,4vw,36px) clamp(20px,5vw,64px);display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.logo{width:42px;height:42px;object-fit:contain;border-radius:12px;display:block}
+.brand-name{font-size:17px;font-weight:650;letter-spacing:-.02em}
+.main{width:100%;flex:1;display:flex;align-items:center;justify-content:center;padding:clamp(30px,7vw,90px) clamp(20px,6vw,80px) clamp(55px,8vw,100px)}
+.content{width:min(1120px,100%);margin:0 auto}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#b9e6c4;margin-bottom:22px}
+h1{font-size:clamp(48px,7vw,88px);line-height:.96;letter-spacing:-.055em;font-weight:650;max-width:850px;margin:0}
+.intro{font-size:clamp(17px,2vw,20px);line-height:1.55;color:#cbd1cd;max-width:680px;margin:28px 0 0}
+.card{margin-top:clamp(44px,7vw,72px);background:var(--surface);color:var(--text);border-radius:28px;padding:clamp(24px,4vw,40px);box-shadow:0 20px 70px rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.08);animation:cardIn .7s cubic-bezier(.22,1,.36,1) both}
+.card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:28px}
+.section-label{font-size:12px;font-weight:750;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+h2{font-size:clamp(24px,3vw,32px);line-height:1.1;letter-spacing:-.035em;margin:0;font-weight:650}
+.order{font-size:16px;line-height:1.5;color:var(--text);margin:12px 0 0}
+.comparison{width:min(600px,100%);margin:0 auto;display:flex;overflow:hidden;border-radius:9999px;min-height:116px;box-shadow:inset 0 0 0 1px var(--line);animation:rise .65s .08s cubic-bezier(.22,1,.36,1) both}
+.half{flex:1;min-width:0;padding:24px 28px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.expected{background:var(--expected)}
+.mismatch{background:var(--mismatch)}
+.divider{width:1px;background:rgba(16,23,20,.12);align-self:stretch}
+.med-label{font-size:11px;font-weight:750;text-transform:uppercase;letter-spacing:.12em;color:#69736d;margin-bottom:7px}
+.medication{font-size:clamp(18px,2.2vw,21px);line-height:1.25;font-weight:650;letter-spacing:-.015em;overflow-wrap:anywhere}
+.actions{display:flex;justify-content:center;margin-top:22px}
+.verify{border:0;border-radius:9999px;background:var(--button);color:var(--buttonText);padding:15px 25px;min-height:50px;font-size:16px;font-weight:650;cursor:pointer;box-shadow:0 5px 18px rgba(16,23,20,.16);transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s ease,opacity .2s ease}
+.verify:hover{transform:translateY(-2px);box-shadow:0 9px 24px rgba(16,23,20,.20)}
+.verify:active{transform:scale(.97)}
+.verify:focus-visible{outline:3px solid rgba(34,110,64,.35);outline-offset:4px}
+.status{min-height:24px;text-align:center;font-size:15px;font-weight:700;color:var(--danger);margin:16px 0 0;opacity:0;transform:translateY(6px);transition:opacity .35s ease,transform .35s cubic-bezier(.22,1,.36,1)}
+.status.show{opacity:1;transform:none}
+.footer{padding:24px clamp(20px,5vw,64px) 30px;color:#87908b;font-size:12px;text-align:center}
+@keyframes cardIn{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media(max-width:680px){.header{padding:20px}.logo{width:38px;height:38px}.main{padding:32px 18px 52px}.card{border-radius:24px;padding:22px 18px}.card-head{display:block}.comparison{min-height:110px}.half{padding:22px 16px}.actions{margin-top:18px}.verify{width:100%;max-width:360px}.footer{padding-bottom:24px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.comparison{animation:none}.verify,.status{transition:none}}
+@media(prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#101714;--surface:#f7f6f1;--text:#101714;--muted:#68716c}}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="header">
+<a class="brand" href="#top" aria-label="Medqur DoseLock home">
+<img class="logo" src="HERBQURE%20-%20MEDVERIFY%20APP.png" alt="Medqur logo">
+<span class="brand-name">Medqur · DoseLock</span>
+</a>
+</header>
+<main class="main" id="top">
+<section class="content" aria-labelledby="page-title">
+<div class="eyebrow">Medication verification</div>
+<h1 id="page-title">The last check before the dose.</h1>
+<p class="intro">A focused verification step designed to help clinical teams confirm the right medication before administration.</p>
+<section class="card" aria-labelledby="patient-title">
+<div class="card-head">
+<div>
+<p class="section-label">Patient &amp; order</p>
+<h2 id="patient-title">Patient Devon · Expected order</h2>
+<p class="order">Morphine 4 mg IV</p>
+</div>
+</div>
+<div class="comparison" aria-label="Medication comparison">
+<div class="half expected">
+<div class="med-label">Expected</div>
+<div class="medication">Morphine 4 mg IV</div>
+</div>
+<div class="divider" aria-hidden="true"></div>
+<div class="half mismatch">
+<div class="med-label">Example mismatch</div>
+<div class="medication">Hydromorphone 4 mg</div>
+</div>
+</div>
+<div class="actions">
+<button class="verify" type="button" onclick="verifyDose()">Run verification</button>
+</div>
+<p class="status" id="status" role="status" aria-live="polite"></p>
+</section>
+</section>
+</main>
+<footer class="footer">Medqur · DoseLock prototype</footer>
+</div>
+<script>
+function verifyDose(){const status=document.getElementById('status');status.textContent='HARD STOP — mismatch detected. Do not administer.';status.classList.add('show')}
+</script>
+</body>
+</html>
